@@ -1,0 +1,305 @@
+@import 'media'
+@import 'fonts'
+@import 'anim'
+@import 'drop-menu'
+
+*, *::before, *::after
+    margin: 0
+    padding: 0
+    border: none
+    box-sizing: border-box
+    -ms-user-select: none
+    -moz-user-select: none
+    -webkit-user-select: none
+    user-select: none
+
+html, .body
+    height: 100%
+    min-width: 320px
+    background-color: #000
+
+.body
+    font-family: "Proxima Nova"
+
+.wrapper
+    min-height: 0%
+    display: flex
+    flex-direction: column
+    overflow: hidden
+
+.main
+    flex: 1 1 auto
+    overflow: hidden
+
+[class*="__container"]
+    max-width: 1280px
+    margin: 0 auto
+    @include _1320
+        margin: 0 40px
+
+body::-webkit-scrollbar
+    width: 7px
+
+body::-webkit-scrollbar-track
+    background: #000
+
+body::-webkit-scrollbar-thumb
+    background-color: #F9B400 /* цвет бегунка */
+    border-radius: 15px /* округлось бегунка */
+    border: 2px solid #000 /* отступ вокруг бегунка */
+
+body
+    .header
+            padding-top: 30px
+            background: url('../img/back.png') 100% 100%/cover no-repeat
+            height: 620px
+            position: relative
+        @include _979
+            background: url('../img/back.png') 60% 100%/cover no-repeat
+            height: 550px
+        @include _768
+            height: 406px
+            background: url('../img/back_mob.png') 100% 100%/cover no-repeat
+            padding-top: 10px
+        &::after
+            @include _768
+                content: url('../img/person-mob.png')
+                left: 72%
+                top: 250px
+                position: absolute
+                z-index: 232
+                height: auto
+                display: block
+        &__menu
+            display: flex
+            justify-content: center
+            align-items: center
+        &__logo
+            img
+                user-select: none
+                max-width: 280px
+                @include _768
+                    margin-top: 10px
+                    width: 100%
+        &__local
+            display: flex
+            align-items: center
+            background: rgba(0, 0, 0, 0.5)
+            border: 1px solid #E0DFDF
+            border-radius: 10px
+            padding: 10px 20px
+            text-decoration: none
+            p
+                font-family: 'Proxima Nova'
+                font-style: normal
+                font-weight: 700
+                font-size: 14px
+                line-height: 17px
+                color: #E0DFDF
+                margin-right: 10px
+        &__shadow
+            display: block
+            width: 100%
+            position: relative
+            bottom: 35px
+            z-index: 200
+            height: 80px
+            @include _979
+                bottom: 92px
+            @include _768
+                bottom: 0px
+        &__info
+            margin: 0px auto
+            display: flex
+            flex-direction: column
+            position: relative
+            &::after
+                content: url('../img/person.png')
+                right: 100px
+                bottom: -72px
+                position: absolute
+                z-index: 100
+                width: 285px
+                height: 622px
+                @include _1170
+                    right: 0
+                @include _979
+                    // content: url('../img/person-mob.png')
+                    bottom: -2px
+                    display: none
+            img
+                max-width: 620px
+                width: 100%
+                margin: auto
+                display: block
+                @include _768
+                    max-width: 310px
+            a
+                margin: 33px auto
+                background: linear-gradient(93.7deg, #F9B400 0%, #FC8702 100%)
+                border-radius: 126px
+                font-family: 'Gotham Pro'
+                font-style: normal
+                font-weight: 700
+                font-size: 24px
+                line-height: 125%
+                color: #FFFFFF
+                display: block
+                text-decoration: none
+                max-width: 330px
+                width: 100%
+                padding: 20px 0px
+                text-align: center
+                transition: 0.3s
+                text-transform: uppercase
+                z-index: 300
+                &:hover
+                    box-shadow: 0px 0px 65.6651px rgba(250, 154, 1, 0.7)
+                @include _979
+                    max-width: 280px
+                @include _768
+                    text-align: center
+                    width: 70%
+                    margin: 30px auto 0
+                    padding: 10px 0px
+                    font-size: 16px
+                    text-transform: uppercase
+
+            &__links-mob
+                display: none
+                @include _768
+                    display: block
+            &__links-mob a
+                @include _768
+                    margin-top: 10px
+                    border: none
+                    background: none
+                    box-shadow: none
+
+    .main
+        .proposition
+            position: relative
+            @include _979
+                margin-top: 0
+            &__images
+                display: flex
+                justify-content: center
+                align-items: center
+                height: 250px
+                @include _768
+                    display: none
+            &__img
+                display: flex
+                flex-direction: column
+                align-items: center
+                width: 250px
+                margin: 0 15px
+                @include _979
+                    width: 200px
+                p
+                    font-family: 'Proxima Nova'
+                    font-style: normal
+                    font-weight: 700
+                    font-size: 23px
+                    line-height: 25px
+                    text-align: center
+                    letter-spacing: 0.0131502px
+                    text-transform: uppercase
+                    color: #FFFFFF
+                    max-width: 250px
+                    position: relative
+                    text-decoration: none
+                    @include _979
+                        font-size: 20px
+                .second
+                    top: 23px
+                .first,
+                    top: 20px
+                .third
+                    top: 22px
+            &__links
+                margin-top: 52px
+            &__link
+                background: linear-gradient(93.7deg, #F9B400 0%, #FC8702 100%)
+                border-radius: 126.474px
+                font-family: 'Gotham Pro'
+                font-style: normal
+                font-weight: 700
+                font-size: 24px
+                line-height: 125%
+                color: #FFFFFF
+                text-decoration: none
+                padding: 20px 0px
+                display: block
+                margin: 0 auto
+                max-width: 330px
+                text-align: center
+                transition: 0.3s
+                text-transform: uppercase
+                &:hover
+                    box-shadow: 0px 0px 65.6651px rgba(250, 154, 1, 0.7)
+
+            &__images-mob
+                display: none
+                @include _768
+                    display: block
+            &__images-item
+                display: flex
+                align-items: center
+                margin-bottom: 35px
+                p
+                    font-family: 'Proxima Nova'
+                    font-style: normal
+                    font-weight: 700
+                    font-size: 16px
+                    line-height: 25px
+                    letter-spacing: 0.0131502px
+                    text-transform: uppercase
+                    color: #FFFFFF
+                    margin-left: 20px
+
+        .footer
+            margin-top: 60px
+            margin-bottom: 35px
+            @include _979
+                margin-top: 50px
+            @include _768
+                margin-top: 30px
+            &__line
+                border: 1px solid rgba(255, 255, 255, 0.12)
+                color: rgba(255, 255, 255, 0.12)
+                text-align: center
+                display: block
+                margin: 0 auto
+                @include _768
+                    display: none
+            &__partners
+                margin-top: 25px
+                img
+                    width: 100%
+            .decs
+                @include _768
+                    display: none
+            .mob
+                display: none
+                @include _768
+                    display: block
+            &__info
+                margin-top: 25px
+                display: flex
+                justify-content: space-between
+                align-items: center
+                @include _768
+                    flex-direction: column
+            &__logo
+                margin-right: 15px
+            &__text
+                font-family: 'Proxima Nova'
+                font-style: normal
+                font-weight: 400
+                font-size: 12px
+                line-height: 18px
+                color: rgba(255, 255, 255, 0.47)
+                @include _768
+                    margin-top: 20px
+                    text-align: center
