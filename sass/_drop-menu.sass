@@ -27,7 +27,10 @@
 
 
 .dropdown
-    position: relative
+    position: absolute
+    right: 0px
+    @include _768
+        position: relative
     .dropdown-content
         display: none
         position: absolute

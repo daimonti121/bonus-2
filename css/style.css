@@ -191,7 +191,11 @@
     margin-left: 5px; }
 
 .dropdown {
-  position: relative; }
+  position: absolute;
+  right: 0px; }
+  @media (max-width: 768px) {
+    .dropdown {
+      position: relative; } }
   .dropdown .dropdown-content {
     display: none;
     position: absolute;
@@ -300,7 +304,8 @@ body .header {
   body .header__menu {
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    position: relative; }
   body .header__logo img {
     user-select: none;
     max-width: 280px; }
@@ -447,7 +452,7 @@ body .main .proposition {
         body .main .proposition__img p {
           font-size: 20px; } }
     body .main .proposition__img .second {
-      top: 23px; }
+      top: 30px; }
     body .main .proposition__img .first {
       top: 20px; }
     body .main .proposition__img .third {
